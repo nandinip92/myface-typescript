@@ -1,15 +1,39 @@
 <html lang="en-gb">
-<%- include('_head') -%>
-<%- include('_header') -%>
-<body>
-<h1>Posts</h1>
-<ol>
-    <% postList.results.forEach(function(post) {%>
-        <li>
-            <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
-        </li>
-    <% }); %>
-</ol>
-</body>
-<%- include('_footer') -%>
+  <%- include('_head') -%> <%- include('_header') -%>
+  <body>
+    <h1>Posts</h1>
+    <ol>
+      <% postList.results.forEach(function(post) {%>
+      <li>
+        <ul>
+          Message: <%= post.message %>
+        </ul>
+        <ul>
+          CreatedAt: <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss")%>
+        </ul>
+        <ul>
+          ImageURL: <%=post.imageUrl%>
+        </ul>
+        <ul>
+          postedBy: <%=post.postedBy.username%>
+        </ul>
+        <ul>
+          <!-- likedBy: <%post.likedBy.forEach((user)=>{%><%=user.username%>,<%})%> -->
+          likedBy: <%=post.likedBy.map((user)=>user.username).join(", ")%>
+        </ul>
+        <ul>
+          <!-- dislikedBy: <%post.dislikedBy.forEach((user)=>{%><%=user.username%>,<%})%> -->
+          dislikedBy: <%=post.dislikedBy.map((user)=>user.username).join(", ")%>
+        </ul>
+      </li>
+      <% }); %>
+    </ol>
+    <%if (postList.next) { %>
+        <a href="<%= postList.next %>">Next</a>
+    <% } %>
+    <%if (postList.previous) { %>
+        <a href="<%= postList.previous %>">Previous</a>
+    <% } %>
+  </body>
+  <%- include('_footer') -%>
 </html>
