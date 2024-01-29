@@ -6,31 +6,31 @@
       <% postList.results.forEach(function(post) {%>
       <li>
         <ul>
-          Message: <%= post.message %>
+          <strong>Message:</strong> <%= post.message %>
         </ul>
         <ul>
-          CreatedAt: <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss")%>
+          <strong>CreatedAt:</strong> <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss")%>
         </ul>
         <ul>
-          ImageURL: <%=post.imageUrl%>
+          <strong>ImageURL:</strong> <img src="<%=post.imageUrl%>" height="150" width="150"/>
         </ul>
         <ul>
-          postedBy: <%=post.postedBy.username%>
+        <strong>postedBy:</strong> <%=post.postedBy.username%>
         </ul>
         <ul>
           <!-- likedBy: <%post.likedBy.forEach((user)=>{%><%=user.username%>,<%})%> -->
-          likedBy: <%=post.likedBy.map((user)=>user.username).join(", ")%>
+        <strong>likedBy:</strong> <%=post.likedBy.map((user)=>user.username).join(", ")%>
         </ul>
         <ul>
           <!-- dislikedBy: <%post.dislikedBy.forEach((user)=>{%><%=user.username%>,<%})%> -->
-          dislikedBy: <%=post.dislikedBy.map((user)=>user.username).join(", ")%>
+        <strong>dislikedBy:</strong> <%=post.dislikedBy.map((user)=>user.username).join(", ")%>
         </ul>
       </li>
       <% }); %>
     </ol>
     <%if (postList.next) { %>
         <a href="<%= postList.next %>">Next</a>
-    <% } %>
+    <% } %> |
     <%if (postList.previous) { %>
         <a href="<%= postList.previous %>">Previous</a>
     <% } %>
