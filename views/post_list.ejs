@@ -26,6 +26,12 @@
         <strong>dislikedBy:</strong> <%=post.dislikedBy.map((user)=>user.username).join(", ")%>
         </ul>
       </li>
+      <form method="post" action="/posts/<%=post.id%>/like">
+        <button type="submit">like</button>
+      </form>
+      <form method="post" action="/posts/<%=post.id%>/dislike">
+        <button type="submit">dislike</button>
+      </form>
       <% }); %>
     </ol>
     <%if (postList.next) { %>
