@@ -1,1 +1,100 @@
 /* Add your styles here. */
+h1 {
+  color: brown;
+}
+
+.post {
+  /* margin: 5em solid blue; */
+  border: 0.5rem solid red;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 1rem 1rem 1rem;
+}
+.post_content {
+  border: 0.5em solid orange;
+  padding: 1em 1em 1em 1em;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* font-size: 1.5rem; */
+    /* width: 50rem;
+    height: 50rem;  */
+}
+strong {
+  font-family: cursive;
+  font-weight: bolder;
+}
+
+#post_image {
+  width: 20rem;
+  height: 20rem;
+}
+.button-container{
+    display:flex;
+}
+.button{
+ padding: 1rem 1rem;
+  text-align: center;
+  text-decoration:solid black;
+  font-family: cursive;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+#like{
+    background-color: cyan;
+}
+#dislike{
+    background-color: orangered;
+}
+
+@media (max-width: 320px) {
+  .post {
+    flex-direction: column;
+  }
+  .post_content {
+    font-size: 0.5rem;
+  }
+
+  #post_image {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+/* @media (min-width: 320px) {
+    #post_image {
+      width: 10rem;
+      height: 10rem;
+    }
+  } */
+@media (min-width: 820px) {
+  .post {
+    flex-direction: column;
+  }
+  .post_content {
+    font-size: 1rem;
+    width:25rem;
+    height:25rem;
+  }
+  #post_image {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .post {
+    flex-direction: row;
+  }
+  .post_content {
+    font-size: 1.2rem;
+    width:30rem;
+    height:30rem;
+  }
+  #post_image {
+    width: 15rem;
+    height: 15rem;
+  }
+}
