@@ -2,43 +2,51 @@
   <%- include('_head') -%> <%- include('_header') -%>
   <body>
     <h1>Posts</h1>
-    <ol>
+    <ol class="post">
       <% postList.results.forEach(function(post) {%>
-      <li>
+      <li class="post_content">
         <ul>
-          <strong>Message:</strong> <%= post.message %>
+          <!-- <strong>ImageURL:</strong> -->
+          <img src="<%=post.imageUrl%>" id="post_image" />
         </ul>
         <ul>
-          <strong>CreatedAt:</strong> <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss")%>
+          <strong>Message:</strong>
+          <%= post.message %>
         </ul>
         <ul>
-          <strong>ImageURL:</strong> <img src="<%=post.imageUrl%>" height="150" width="150"/>
+          <strong>CreatedAt:</strong>
+          <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss")%>
         </ul>
+
         <ul>
-        <strong>postedBy:</strong> <%=post.postedBy.username%>
+          <strong>postedBy:</strong>
+          <%=post.postedBy.username%>
         </ul>
         <ul>
           <!-- likedBy: <%post.likedBy.forEach((user)=>{%><%=user.username%>,<%})%> -->
-        <strong>likedBy:</strong> <%=post.likedBy.map((user)=>user.username).join(", ")%>
+          <strong>likedBy:</strong>
+          <%=post.likedBy.map((user)=>user.username).join(", ")%>
         </ul>
         <ul>
           <!-- dislikedBy: <%post.dislikedBy.forEach((user)=>{%><%=user.username%>,<%})%> -->
-        <strong>dislikedBy:</strong> <%=post.dislikedBy.map((user)=>user.username).join(", ")%>
+          <strong>dislikedBy:</strong>
+          <%=post.dislikedBy.map((user)=>user.username).join(", ")%>
         </ul>
+        <div class="button-container">
+          <form method="post" action="/posts/<%=post.id%>/like">
+            <button type="submit" class="button" id="like">like</button>
+          </form>
+          <form method="post" action="/posts/<%=post.id%>/dislike">
+            <button type="submit" class="button" id="dislike">dislike</button>
+          </form>
+        </div>
       </li>
-      <form method="post" action="/posts/<%=post.id%>/like">
-        <button type="submit">like</button>
-      </form>
-      <form method="post" action="/posts/<%=post.id%>/dislike">
-        <button type="submit">dislike</button>
-      </form>
       <% }); %>
     </ol>
     <%if (postList.next) { %>
-        <a href="<%= postList.next %>">Next</a>
-    <% } %> |
-    <%if (postList.previous) { %>
-        <a href="<%= postList.previous %>">Previous</a>
+    <a href="<%= postList.next %>">Next</a>
+    <% } %> | <%if (postList.previous) { %>
+    <a href="<%= postList.previous %>">Previous</a>
     <% } %>
   </body>
   <%- include('_footer') -%>
