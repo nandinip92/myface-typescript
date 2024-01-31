@@ -1,8 +1,18 @@
 <html lang="en-gb">
-<%- include('_head') -%>
-<%- include('_header') -%>
-<body>
-<h1><%= name %></h1>
-</body>
-<%- include('_footer') -%>
+  <%- include('_head') -%> <%- include('_header') -%>
+  <body class="main">
+    <img src="<%=coverImageUrl%>" id="cover-picture" />
+
+    <div class="user-details">
+      <div class="profile">
+        <img src="<%=profileImageUrl%>" id="profile-picture" />
+      </div>
+      <div class="details">
+        <p id="name"><%= name %></p>
+        <p class="sub-title" id="username"><%= username%></p>
+        <p id="email"><%=email%></p>
+      </div>
+    </div>
+  </body>
+  <%- include('_footer') -%>
 </html>
