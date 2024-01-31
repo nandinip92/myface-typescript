@@ -1,10 +1,82 @@
 /* Add your styles here. */
-h1 {
+.main {
+  background-color: #252a38;
+}
+#cover-picture {
+  position: relative;
+  width: 100%;
+  height: 25%;
+}
+.user-details {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  /* border: 0.5rem solid orange; */
+  position: relative;
+  transform: translateY(-50%);
+  margin-left: 5%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #dcdcdc;
+  background-color: rgba(37, 42, 36, 0.7);
+}
+
+#profile-picture {
+  border-radius: 50%;
+  height: 200px; /* This is height of Profile Picture*/
+}
+.details {
+  /* border: 0.5rem solid green; */
+  line-height: 1px;
+  padding-left: 10px;
+}
+.sub-title {
+  font-size: 32px;
+}
+
+
+@media (min-width: 200px) {
+  #name {
+    font-size: 20px;
+  }
+  #profile-picture {
+    border-radius: 50%;
+    height: 100px; /* This is height of Profile Picture*/
+  }
+  .sub-title {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 430px) {
+  #name {
+    font-size: 26px;
+  }
+  .sub-title {
+    font-size: 20px;
+  }
+}
+@media (min-width: 820px) {
+  #name {
+    font-size: 32px;
+  }
+  .sub-title {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1000px) {
+  #name {
+    font-size: 40px;
+  }
+  .sub-title {
+    font-size: 32px;
+  }
+}
+/* h1 {
   color: brown;
 }
 
 .post {
-  /* margin: 5em solid blue; */
+
   border: 0.5rem solid red;
   display: flex;
   flex-wrap: wrap;
@@ -15,10 +87,6 @@ h1 {
   padding: 1em 1em 1em 1em;
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  /* font-size: 1.5rem; */
-    /* width: 50rem;
-    height: 50rem;  */
 }
 strong {
   font-family: cursive;
@@ -63,12 +131,6 @@ strong {
     height: 10rem;
   }
 }
-/* @media (min-width: 320px) {
-    #post_image {
-      width: 10rem;
-      height: 10rem;
-    }
-  } */
 @media (min-width: 820px) {
   .post {
     flex-direction: column;
@@ -97,4 +159,4 @@ strong {
     width: 15rem;
     height: 15rem;
   }
-}
+} */
