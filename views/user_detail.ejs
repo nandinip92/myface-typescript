@@ -13,6 +13,22 @@
         <p id="email"><%=email%></p>
       </div>
     </div>
+    <div class="posts">
+      <h2 class="title"><%=name%>'s Posts</h2>
+      <div class="cards-container">
+        <%posts.forEach((post)=>{%>
+        <div class="card">
+          <img src="<%=post.imageUrl%>" />
+          <div class="card-content">
+            <p class="sub-title"><%=username%></p>
+            <p class="secondary"><%=post.createdAt%></p>
+            <p class="message"><%=post.message%></p>
+          </div>
+        </div>
+
+        <%});%>
+      </div>
+    </div>
   </body>
   <%- include('_footer') -%>
 </html>
