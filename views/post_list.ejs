@@ -3,7 +3,7 @@
   <body>
     <h1>Posts</h1>
     <div class="all-posts-container">
-      <% postList.results.forEach(function(post) {%>
+      <% postList.results.forEach(function(post,indx) {%>
       <div class="card">
         <img src="<%=post.imageUrl%>" id="post_image" />
         <ul class="card-content">
@@ -40,6 +40,9 @@
                   dislike
                 </button>
               </form>
+              <button class="color-button" id="color-button_<%=indx%>">
+                Change Color
+              </button>
             </div>
           </li>
         </ul>
