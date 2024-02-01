@@ -7,24 +7,42 @@
       <div class="card">
         <img src="<%=post.imageUrl%>" id="post_image" />
         <ul class="card-content">
-          <li><%= post.message %></li>
+          <li><p class="card-text"><%= post.message %></p></li>
           <li>
-            CreatedAt: <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss")%>
-          </li>
-          <li>postedBy: <%=post.postedBy.username%></li>
-          <li>
-            likedBy: <%=post.likedBy.map((user)=>user.username).join(", ")%>
+            <p class="card-text">
+              <strong>CreatedAt:</strong> <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss")%>
+            </p>
           </li>
           <li>
-            dislikedBy: <%=post.dislikedBy.map((user)=>user.username).join(", ")%>
+            <p class="card-text">
+              <strong>postedBy:</strong> <%=post.postedBy.username%>
+            </p>
+          </li>
+          <li>
+            <p class="card-text">
+              <strong>likedBy:</strong>
+              <%=post.likedBy.map((user)=>user.username).join(", ")%>
+            </p>
+          </li>
+          <li>
+            <p class="card-text">
+              <strong>dislikedBy:</strong>
+              <%=post.dislikedBy.map((user)=>user.username).join(", ")%>
+            </p>
+          </li>
+          <li>
+            <div class="buttons-container">
+              <form method="post" action="/posts/<%=post.id%>/like">
+                <button type="submit" class="button" id="like">like</button>
+              </form>
+              <form method="post" action="/posts/<%=post.id%>/dislike">
+                <button type="submit" class="button" id="dislike">
+                  dislike
+                </button>
+              </form>
+            </div>
           </li>
         </ul>
-        <form method="post" action="/posts/<%=post.id%>/like">
-          <button type="submit" class="button" id="like">like</button>
-        </form>
-        <form method="post" action="/posts/<%=post.id%>/dislike">
-          <button type="submit" class="button" id="dislike">dislike</button>
-        </form>
       </div>
       <% }); %>
     </div>

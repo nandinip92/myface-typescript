@@ -2,6 +2,16 @@
 * {
   color: #dcdcdc;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  .button {
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+    color: black;
+    font-family: cursive;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
 }
 /*Navigation bar*/
 .navbar {
@@ -47,29 +57,77 @@
   padding-left: 10px;
 }
 /*Reference for Cards creation: https://codepen.io/mcraiganthony/pen/NxGxqm*/
+/*all-posts-container is only for the posts page*/
 .all-posts-container {
+  border: 0.5rem solid red;
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
+  margin: 0;
+  padding: 0;
+
+  /*This is for the images in the Posts page*/
+  img {
+    vertical-align: middle;
+    height: auto;
+    width: 100%;
+  }
+  strong {
+    font-family: cursive;
+    font-weight: bolder;
+  }
+  /* .card {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  } */
 }
+
+.buttons-container {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  #like {
+    background-color: cyan;
+  }
+  #dislike {
+    background-color: orangered;
+  }
+}
+
+/* Cards container is only for user-details page*/
 .cards-container {
   display: flex;
   overflow-x: auto;
   @media (min-width: 200px) {
     gap: 16px;
+    img {
+      height: 100px;
+    }
   }
+  /*The img in the following media queries is only for the images on user details cards*/
   @media (min-width: 430px) {
     gap: 24px;
+    img {
+      height: 200px;
+    }
   }
   @media (min-width: 820px) {
     gap: 32px;
+    img {
+      height: 350px;
+    }
   }
   @media (min-width: 1000px) {
     gap: 40px;
+    img {
+      height: 350px;
+    }
   }
 }
 
 .card {
+  border: 0.5rem solid orange;
   background-color: #151820;
   border-radius: 0.25rem;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
@@ -80,12 +138,26 @@
   background-size: cover;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  height: auto;
-  width: 100%;
+}
 
-  /* @media (min-width: 200px) {
-    height: auto;
-    width: 100%;
+.card-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+  list-style: none;
+}
+.card-text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+
+/* This is for the images in the users page
+.cards-container .card img {
+  @media (min-width: 200px) {
+    height: 100px;
   }
   @media (min-width: 430px) {
     height: 200px;
@@ -95,19 +167,9 @@
   }
   @media (min-width: 1000px) {
     height: 350px;
-  } */
+  }
 }
-.card-content {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  padding: 1rem;
-}
-/* .all-posts-container .card-content {
-  border: 0.2rem solid orange;
-  display: block;
-} */
-
+*/
 @media (min-width: 200px) {
   #name {
     font-size: 20px;
@@ -219,26 +281,7 @@ strong {
   width: 20rem;
   height: 20rem;
 }
-.button-container{
-    display:flex;
-}
-.button{
- padding: 1rem 1rem;
-  text-align: center;
-  text-decoration:solid black;
-  font-family: cursive;
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 4px 2px;
-  cursor: pointer;
 
-}
-#like{
-    background-color: cyan;
-}
-#dislike{
-    background-color: orangered;
-}
 
 @media (max-width: 320px) {
   .post {
