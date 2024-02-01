@@ -6,17 +6,19 @@
       <% postList.results.forEach(function(post) {%>
       <div class="card">
         <img src="<%=post.imageUrl%>" id="post_image" />
-        <div class="card-content">
-          <p><%= post.message %></p>
-          <p>CreatedAt: <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss")%></p>
-          <p>postedBy: <%=post.postedBy.username%></p>
-          <p>
+        <ul class="card-content">
+          <li><%= post.message %></li>
+          <li>
+            CreatedAt: <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss")%>
+          </li>
+          <li>postedBy: <%=post.postedBy.username%></li>
+          <li>
             likedBy: <%=post.likedBy.map((user)=>user.username).join(", ")%>
-          </p>
-          <p>
+          </li>
+          <li>
             dislikedBy: <%=post.dislikedBy.map((user)=>user.username).join(", ")%>
-          </p>
-        </div>
+          </li>
+        </ul>
         <form method="post" action="/posts/<%=post.id%>/like">
           <button type="submit" class="button" id="like">like</button>
         </form>
