@@ -1,7 +1,26 @@
 /* Add your styles here. */
 * {
   color: #dcdcdc;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+/*Navigation bar*/
+.navbar {
+  background-color: #151820;
+  padding: 10px 0;
+}
+.navbar .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .app-name {
+  font-size: 20px;
+}
+.navbar .menu-list {
+  display: inline-flex;
+  text-decoration: none;
+}
+/*User Details*/
 .main {
   background-color: #252a38;
   color: #dcdcdc;
@@ -12,14 +31,13 @@
   height: 25%;
 }
 .user-details {
+  /* border: 0.5rem solid orange; */
   display: flex;
   flex-wrap: wrap;
   column-gap: 20px;
-  /* border: 0.5rem solid orange; */
   position: relative;
   transform: translateY(-50%);
   margin-left: 5%;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: rgba(37, 42, 36, 0.7);
 }
 
@@ -28,6 +46,7 @@
   line-height: 1px;
   padding-left: 10px;
 }
+/*Reference for Cards creation: https://codepen.io/mcraiganthony/pen/NxGxqm*/
 .all-posts-container {
   display: flex;
   flex-wrap: wrap;
@@ -36,23 +55,58 @@
 .cards-container {
   display: flex;
   overflow-x: auto;
-  gap: 32px;
+  @media (min-width: 200px) {
+    gap: 16px;
+  }
+  @media (min-width: 430px) {
+    gap: 24px;
+  }
+  @media (min-width: 820px) {
+    gap: 32px;
+  }
+  @media (min-width: 1000px) {
+    gap: 40px;
+  }
 }
 
 .card {
   background-color: #151820;
-  margin-bottom: 25px;
+  border-radius: 0.25rem;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 .card img {
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: center center;
-}
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  height: auto;
+  width: 100%;
 
-.card-content {
-  padding: 10px 10px 10px 10px;
+  /* @media (min-width: 200px) {
+    height: auto;
+    width: 100%;
+  }
+  @media (min-width: 430px) {
+    height: 200px;
+  }
+  @media (min-width: 820px) {
+    height: 350px;
+  }
+  @media (min-width: 1000px) {
+    height: 350px;
+  } */
 }
+.card-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+/* .all-posts-container .card-content {
+  border: 0.2rem solid orange;
+  display: block;
+} */
 
 @media (min-width: 200px) {
   #name {
@@ -68,12 +122,7 @@
   .sub-title {
     font-size: 16px;
   }
-  .cards-container {
-    gap: 16px;
-  }
-  .card img {
-    height: 100px;
-  }
+
   .card-message {
     font-size: 14px;
     font-weight: 300;
@@ -95,18 +144,13 @@
     font-size: 20px;
     font-weight: 400;
   }
-  .cards-container {
-    column-gap: 24px;
-  }
-  .card img {
-    height: 200px;
-  }
+
   .card-message {
     font-size: 14px;
     font-weight: 300;
   }
 }
-/*Tablet*/
+
 @media (min-width: 820px) {
   #name {
     font-size: 32px;
@@ -122,12 +166,7 @@
     font-size: 24px;
     font-weight: 400;
   }
-  .cards-container {
-    column-gap: 32px;
-  }
-  .card img {
-    height: 350px;
-  }
+
   .card-message {
     font-size: 14px;
     font-weight: 300;
@@ -148,12 +187,7 @@
     font-size: 32px;
     font-weight: 400;
   }
-  .cards-container {
-    gap: 48px;
-  }
-  .card img {
-    height: 350px;
-  }
+
   .cards-container .card img {
     font-size: 16px;
     font-weight: 300;
