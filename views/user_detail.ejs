@@ -15,52 +15,55 @@
     </div>
     <div class="posts">
       <p class="title"><%=name%>'s Posts</p>
-      <div class="cards-container">
+      <ul class="cards-container">
         <%posts.forEach((post)=>{%>
-        <div class="card">
-          <img src="<%=post.imageUrl%>" />
-          <div class="card-content">
-            <p class="sub-title"><%=username%></p>
-            <p class="secondary"><%=post.createdAt%></p>
-            <p class="card-message"><%=post.message%></p>
+        <li class="cards-item">
+          <div class="card">
+            <img src="<%=post.imageUrl%>" />
+            <div class="card-content">
+              <p class="sub-title"><%=username%></p>
+              <p class="secondary"><%=post.createdAt%></p>
+              <p class="card-message"><%=post.message%></p>
+            </div>
           </div>
-        </div>
-
+        </li>
         <%});%>
-      </div>
+      </ul>
     </div>
     <div class="posts-liked">
       <p class="title">Posts <%=name%> Liked</p>
-      <div class="cards-container">
+      <ul class="cards-container">
         <%likes.forEach((post)=>{%>
-        <div class="card">
-          <img src="<%=post.imageUrl%>" />
-          <div class="card-content">
-            <p class="sub-title"><%=username%></p>
-            <p class="secondary"><%=post.createdAt%></p>
-            <p class="card-message"><%=post.message%></p>
+        <li class="cards-item">
+          <div class="card">
+            <img src="<%=post.imageUrl%>" />
+            <div class="card-content">
+              <p class="sub-title"><%=username%></p>
+              <p class="secondary"><%=post.createdAt%></p>
+              <p class="card-message"><%=post.message%></p>
+            </div>
           </div>
-        </div>
-
+        </li>
         <%});%>
-      </div>
+      </ul>
     </div>
 
     <div class="posts-disliked">
       <p class="title">Posts <%=name%> Disliked</p>
-      <div class="cards-container">
+      <ul class="cards-container">
         <%dislikes.forEach((post)=>{%>
-        <div class="card">
-          <img src="<%=post.imageUrl%>" />
-          <div class="card-content">
-            <p class="sub-title"><%=username%></p>
-            <p class="secondary"><%=post.createdAt%></p>
-            <p class="card-message"><%=post.message%></p>
+        <li class="cards-item">
+          <div class="card">
+            <img src="<%=post.imageUrl%>" />
+            <div class="card-content">
+              <p class="sub-title"><%=username%></p>
+              <p class="secondary"><%=post.createdAt%></p>
+              <p class="card-message"><%=post.message%></p>
+            </div>
           </div>
-        </div>
-
+        </li>
         <%});%>
-      </div>
+      </ul>
     </div>
   </body>
   <%- include('_footer') -%>
