@@ -2,16 +2,6 @@
 * {
   color: #dcdcdc;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  .button {
-    padding: 0.5rem 0.5rem;
-    text-align: center;
-    color: black;
-    font-family: cursive;
-    font-size: 1rem;
-    font-weight: bold;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
 }
 /*Navigation bar*/
 .navbar {
@@ -24,7 +14,7 @@
   justify-content: space-between;
 }
 .navbar .app-name {
-  font-size: 20px;
+  font-size: 30px;
 }
 .navbar .menu-list {
   display: inline-flex;
@@ -59,7 +49,7 @@
 /*Reference for Cards creation: https://codepen.io/mcraiganthony/pen/NxGxqm*/
 /*all-posts-container is only for the posts page*/
 .all-posts-container {
-  border: 0.5rem solid red;
+  /* border: 0.5rem solid yellowgreen; */
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
@@ -67,20 +57,15 @@
   padding: 0;
 
   /*This is for the images in the Posts page*/
-  img {
+  /* img {
     vertical-align: middle;
     height: auto;
     width: 100%;
-  }
+  } */
   strong {
     font-family: cursive;
     font-weight: bolder;
   }
-  /* .card {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-  } */
 }
 
 .buttons-container {
@@ -93,43 +78,73 @@
   #dislike {
     background-color: orangered;
   }
+  .button {
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+    color: black;
+    font-family: cursive;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
 }
 
 /* Cards container is only for user-details page*/
 .cards-container {
+  /* border: 0.2rem solid yellowgreen; */
   display: flex;
   overflow-x: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   @media (min-width: 200px) {
     gap: 16px;
-    img {
-      height: 100px;
-    }
   }
-  /*The img in the following media queries is only for the images on user details cards*/
+
   @media (min-width: 430px) {
     gap: 24px;
-    img {
-      height: 200px;
-    }
   }
   @media (min-width: 820px) {
     gap: 32px;
-    img {
-      height: 350px;
-    }
   }
   @media (min-width: 1000px) {
     gap: 40px;
-    img {
-      height: 350px;
-    }
   }
 }
 
+.cards-item {
+  /* border: 0.3rem solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  /* padding: 1rem; */
+  /* width: 50%; */
+  @media (max-width: 429px) {
+    width: 20%;
+  }
+  @media (min-width: 430px) {
+    width: 22.2222%;
+  }
+  @media (min-width: 820px) {
+    width: 33.3333%;
+  }
+  @media (min-width: 1000px) {
+    width: 40%;
+  }
+}
+
+/* img {
+  /* height: auto;
+  max-width: 100%; */
+/* vertical-align: middle; 
+} */
 .card {
-  border: 0.5rem solid orange;
+  /* border: 0.2rem solid orange; */
   background-color: #151820;
   border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 .card img {
