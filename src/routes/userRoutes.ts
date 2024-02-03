@@ -2,6 +2,7 @@ import express from "express";
 import { createUser, getPageOfUsers, getUser } from "../services/userService";
 import { CreateUserRequest } from "../models/api/createUserRequest";
 import { body, validationResult } from "express-validator";
+import { format } from "date-fns";
 
 const router = express.Router();
 
@@ -42,7 +43,7 @@ router.get("/:userId/", async (request, response) => {
   const userId = parseInt(request.params.userId);
 
   const user = await getUser(userId);
-  return response.render("user_detail", user);
+  return response.render("user_detail", { user: user, format: format });
 });
 
 export default router;
